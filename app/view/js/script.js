@@ -26,6 +26,7 @@ function selectAnswer(button, opcao) {
   const options = document.querySelectorAll(".option");
   options.forEach(btn => btn.disabled = true);
 
+  // Avaliação da resposta
   if (opcao.correta) {
     button.classList.add("correct");
     feedback.innerText = "✅ Correto!";
@@ -35,17 +36,21 @@ function selectAnswer(button, opcao) {
     feedback.innerText = `❌ Errado. ${opcao.comentario}`;
   }
 
-  // mostrar comentário das opções erradas
+  // Exibir comentários de todas as opções
   options.forEach((btn, idx) => {
-    if (!questions[currentQuestion].opcoes[idx].correta) {
-      btn.title = questions[currentQuestion].opcoes[idx].comentario;
-    } else {
+    const comentario = document.createElement("div");
+    comentario.classList.add("comentario");
+    comentario.innerText = questions[currentQuestion].opcoes[idx].comentario;
+    btn.parentElement.insertBefore(comentario, btn.nextSibling);
+
+    if (questions[currentQuestion].opcoes[idx].correta) {
       btn.classList.add("correct");
     }
   });
 
   nextButton.style.display = "inline-block";
 }
+
 
 nextButton.addEventListener("click", () => {
   currentQuestion++;
