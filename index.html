@@ -2,36 +2,48 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa de Estudos PF/PRF</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Selecione um Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .quiz-selector {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .quiz-btn {
+            display: block;
+            width: 200px;
+            margin: 15px auto;
+            padding: 15px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            background: #0078d7;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .quiz-btn:hover {
+            background: #005fa3;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Plano Semanal de Estudos - PF/PRF</h1>
-    </header>
-
-    <section class="planner">
-        <div class="day segunda">Segunda-feira<br><small>Língua Portuguesa</small></div>
-        <div class="day terca">Terça-feira<br><small>Direito Constitucional</small></div>
-        <div class="day quarta">Quarta-feira<br><small>Direito Administrativo</small></div>
-        <div class="day quinta">Quinta-feira<br><small>Direito Penal</small></div>
-        <div class="day sexta">Sexta-feira<br><small>Informática e Raciocínio</small></div>
-        <div class="day sabado">Sábado<br><small>Trânsito ou Leis Penais</small></div>
-        <div class="day domingo">Domingo<br><small>Revisão e Simulados</small></div>
-    </section>
-
-    <section class="quiz">
-        <h2>Quiz Rápido</h2>
-        <div id="quiz-container">
-            <p id="question">Clique em Iniciar para começar!</p>
-            <div id="answers"></div>
-            <button onclick="nextQuestion()">Iniciar Quiz</button>
-        </div>
-    </section>
-
-    <!-- <script src="scripts/script.js"></script>-->
-    <!-- <script src="scripts/pontos.js"></script>-->
-    <script src="scripts/semtask.js"></script>
+    <div class="quiz-selector">
+        <h2>Selecione o Quiz</h2>
+        <button class="quiz-btn" onclick="window.location.href='PRF/prf.html'">Quiz PRF</button>
+        <button class="quiz-btn" onclick="window.location.href='app/view/pages/quizaocp.html'">Quiz OACP</button>
+        <!-- Adicione mais quizzes conforme necessário -->
+    </div>
 </body>
 </html>
